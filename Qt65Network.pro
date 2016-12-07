@@ -16,14 +16,19 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     networker.cpp \
-    weatherdetail.cpp
+    weatherdetail.cpp \
+    weatherwidget.cpp
 
 HEADERS  += mainwindow.h \
     networker.h \
     weatherdetail.h \
-    global.h
+    global.h \
+    weatherwidget.h
 
 DISTFILES += trans.ts
 
 TRANSLATIONS += \
     trans.ts
+
+FORMS += \
+    weatherwidget.ui

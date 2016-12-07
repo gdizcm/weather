@@ -5,43 +5,43 @@
     <name>MainWindow</name>
     <message>
         <source>Beijing</source>
-        <translation type="unfinished"></translation>
+        <translation>北京</translation>
     </message>
     <message>
         <source>Shanghai</source>
-        <translation type="unfinished"></translation>
+        <translation>上海</translation>
     </message>
     <message>
         <source>Dalian</source>
-        <translation type="unfinished"></translation>
+        <translation>大连</translation>
     </message>
     <message>
         <source>Qingdao</source>
-        <translation type="unfinished"></translation>
+        <translation>青岛</translation>
     </message>
     <message>
         <source>Wafangdian</source>
-        <translation type="unfinished"></translation>
+        <translation>瓦房店</translation>
     </message>
     <message>
         <source>City:</source>
-        <translation type="unfinished"></translation>
+        <translation>城市：</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>更新</translation>
     </message>
     <message>
         <source>Weather</source>
-        <translation type="unfinished"></translation>
+        <translation>天气</translation>
     </message>
     <message>
         <source>Update Time:</source>
-        <translation type="unfinished"></translation>
+        <translation>更新时间：</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
 </context>
 </TS>

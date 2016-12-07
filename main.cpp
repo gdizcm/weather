@@ -23,11 +23,6 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.show();
-//    QDateTime dateTime;
-//    dateTime.setTime_t(1480546412);
-//    //QDateTime dateTime2 = QDateTime::fromString(dateTime.toString(), "yyyy-MM-dd hh:mm:ss");
-//    qDebug()<<dateTime.toString("yyyy-MM-dd hh:mm:ss");
-
 
     return a.exec();
 }

@@ -21,8 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       d(new MainWindow::Private(this))
 {
-    QTextCodec *codec = QTextCodec::codecForName("utf8");
-
     QComboBox *cityList = new QComboBox(this);
     cityList->addItem(tr("Beijing"), QStringLiteral("Beijing,cn"));
     cityList->addItem(tr("Shanghai"), QStringLiteral("Shanghai,cn"));
@@ -55,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(mainWidget);
     resize(320, 120);
     setWindowTitle(tr("Weather"));
+
     QHBoxLayout *weatherDetailLayout = new QHBoxLayout;
     weatherDetailLayout->setDirection(QBoxLayout::LeftToRight);
     QLabel *labelweather = new QLabel(this);
@@ -67,6 +66,9 @@ MainWindow::MainWindow(QWidget *parent)
     labeltemp->setFrameStyle(QFrame::Box);
     weatherDetailLayout->addWidget(labeltemp);
     weatherLayout->addLayout(weatherDetailLayout);
+
+
+
 
     connect(d->netWorker, &NetWorker::finished, [=](QNetworkReply *reply) {
         RemoteRequest request = d->replyMap.value(reply);
@@ -90,7 +92,15 @@ MainWindow::MainWindow(QWidget *parent)
                     weather.setHumidity(main[QLatin1String("humidity")].toFloat());
                     QVariantList detailList = data[QLatin1String("weather")].toList();
 
-                    labeltemp->setText(QString("%1 °C").arg(weather.temperature()));
+                    QVariantMap sys = data[QLatin1String("sys")].toMap();
+                    QDateTime sunrise;
+                    sunrise.setTime_t(sys[QLatin1String("sunrise")].toLongLong());
+                    qDebug()<< sunrise.toString(Qt::DefaultLocaleLongDate);
+                    QDateTime sunset;
+                    sunset.setTime_t(sys[QLatin1String("sunset")].toLongLong());
+                    qDebug()<< sunset.toString(Qt::DefaultLocaleLongDate);
+
+                    labeltemp->setText(QString("%1").arg(weather.temperature()));
 
                     QList<WeatherDetail *> details;
 
